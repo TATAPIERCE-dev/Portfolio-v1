@@ -1,0 +1,88 @@
+---
+
+---
+
+<canvas data-purpose="background-particles" id="bg-canvas"></canvas>
+
+<script>
+  const canvas = document.getElementById("bg-canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d");
+  let particles: Particle[] = [];
+
+  function initCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  class Particle {
+    x: number;
+    y: number;
+    size: number;
+    speedX: number;
+    speedY: number;
+    life: number;
+    constructor() {
+      this.x = 0;
+      this.y = 0;
+      this.size = 0;
+      this.speedX = 0;
+      this.speedY = 0;
+      this.life = 0;
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = Math.random() * 0.5 - 0.25;
+      this.speedY = Math.random() * 0.5 - 0.25;
+      this.life = Math.random() * 100;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (
+        this.x < 0 ||
+        this.x > canvas.width ||
+        this.y < 0 ||
+        this.y > canvas.height
+      ) {
+        this.reset();
+      }
+    }
+    draw() {
+      if (!ctx) return;
+      ctx.fillStyle = "#39FF14";
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function createParticles() {
+    const count = Math.floor((canvas.width * canvas.height) / 15000);
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function animate() {
+    if (!ctx) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p) => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener("resize", () => {
+    initCanvas();
+    createParticles();
+  });
+
+  initCanvas();
+  createParticles();
+  animate();
+</script>

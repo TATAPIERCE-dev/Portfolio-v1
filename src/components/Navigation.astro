@@ -1,0 +1,42 @@
+---
+---
+<nav class="fixed top-0 left-0 w-full z-50 bg-dark-bg/80 backdrop-blur-md border-b border-white/10" data-purpose="main-nav">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-neon-green font-bold text-xl tracking-tighter">TATAPIERCE-dev</div>
+    <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+      <a class="hover:text-neon-green transition-colors" href="#hero">Inicio</a>
+      <a class="hover:text-neon-green transition-colors" href="#skills">Skills</a>
+      <a class="hover:text-neon-green transition-colors" href="#trayectoria">Trayectoria</a>
+      <a class="hover:text-neon-green transition-colors" href="#proyectos">Proyectos</a>
+      <a class="hover:text-neon-green transition-colors" href="#contacto">Contacto</a>
+    </div>
+    <div class="md:hidden">
+      <button class="text-white">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  /**
+   * Logic for smooth scroll and active menu highlights
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (this: HTMLAnchorElement, e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (!targetId) return;
+      const targetElement = document.querySelector(targetId) as HTMLElement;
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
