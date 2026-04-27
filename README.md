@@ -1,11 +1,11 @@
-# Mi Portafolio Personal (v1) 🚀
+# Mi Portfolio Personal (v1) 🚀
 
 [![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-Bienvenido al repositorio de mi portafolio personal. Este proyecto es una presentación interactiva de mi trabajo, habilidades y experiencia, diseñado con un enfoque en el rendimiento, la estética minimalista y la experiencia de usuario.
+Bienvenido al repositorio de mi portfolio personal. Este proyecto es una presentación interactiva de mi trabajo, habilidades y experiencia, diseñado con un enfoque en el rendimiento, la estética minimalista y la experiencia de usuario.
 
-*🔗 [Enlace al Portafolio en Vivo (Demo)](#)* <!-- Reemplaza # con tu URL -->
+*🔗 [Visita mi portfolio en vivo (Demo)](https://portfoliov1-tatapierce.vercel.app/)*
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -17,7 +17,7 @@ Este proyecto fue construido utilizando tecnologías web modernas para asegurar 
 
 ## 🧠 Planificación y Arquitectura del Proyecto
 
-El desarrollo de este portafolio siguió una metodología de migración y optimización estructurada:
+El desarrollo de este portfolio siguió una metodología de migración y optimización estructurada:
 
 1. **Diseño y Estructura Inicial (HTML/CSS Base):** El proyecto comenzó como una estructura sólida en HTML puro.
 2. **Migración a Astro:** Para mejorar la mantenibilidad y el rendimiento a largo plazo, el código estático se refactorizó utilizando el sistema de componentes de Astro (`.astro`). Esto permitió dividir el diseño en piezas reutilizables (Navbar, Hero, Proyectos, Footer, etc.).
@@ -43,11 +43,11 @@ Si deseas clonar y ejecutar este proyecto en tu máquina local, sigue estos paso
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/portafolio-v1.git
+   git clone https://github.com/tu-usuario/portfolio-v1.git
    ```
 2. Navega al directorio del proyecto:
    ```bash
-   cd portafolio-v1
+   cd portfolio-v1
    ```
 3. Instala las dependencias:
    ```bash
